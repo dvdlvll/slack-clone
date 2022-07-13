@@ -1,14 +1,49 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./components/landing-page";
+// scss //
+import "./assets/scss/styles.css";
 
+// react libraries //
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import styled from "styled-components";
+
+// components //
+import Chat from "./components/Chat";
+import Login from "./components/Login";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+
+// styled components //
+const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+  grid-template-rows: 50px auto;
+
+  background: pink;
+`;
+
+const Main = styled.div`
+  background: white;
+
+  display: grid;
+  grid-template-columns: 260px auto;
+`;
+
+// app //
 function App() {
   return (
     <div className="App">
       <Router>
-        <Routes>
-          <Route path="/channel" />
-          <Route path="/" element={<LandingPage />} />
-        </Routes>
+        <Container>
+          <Header />
+          <Main>
+            <Sidebar />
+            <Routes>
+              <Route path="/channel" element={<Chat />} />
+              <Route path="/" element={<Login />} />
+            </Routes>
+          </Main>
+        </Container>
       </Router>
     </div>
   );

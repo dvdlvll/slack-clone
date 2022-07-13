@@ -1,0 +1,36 @@
+@mixin flex-properties($direction, $justify: null, $align: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin position-properties($position, $top: null, $left: null, $z-index: null) {
+  position: $position;
+  top: $top;
+  left: $left;
+  z-index: $z-index;
+}
+
+@mixin dimension-properties($height, $width) {
+  min-height: $height;
+  min-width: $width;
+}
+
+@mixin font-properties(
+  $color: null,
+  $family: null,
+  $size: null,
+  $weight: null,
+  $align: null
+) {
+  color: $color;
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  text-align: $align;
+}
+
+@mixin random-background($number) {
+  background-image: url("../img/" + $number + ".png");
+}
