@@ -1,4 +1,6 @@
 /* font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+/* font weights: 400, 700 */
 /* colors */
 /* sizes */
 * {
@@ -6,5 +8,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 /*# sourceMappingURL=styles.css.map */

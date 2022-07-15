@@ -14,8 +14,10 @@ const HeaderContainer = styled.div`
   align-items: center;
 
   position: relative;
+  z-index: 10;
 
   background: #350d36;
+  box-shadow: 0 1px 0 0 rgb(104 74 104);
   color: white;
 `;
 
