@@ -11,4 +11,58 @@
   font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
+
+.toast-message {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px 1em 10px 1em;
+  margin: 50px auto;
+  -webkit-transform: translate(50%, -10%);
+          transform: translate(50%, -10%);
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  -webkit-animation: error 0.2s ease forwards;
+          animation: error 0.2s ease forwards;
+}
+
+.toast-message-success {
+  background-color: #29ac87;
+}
+
+.toast-message-error {
+  background-color: #f95959;
+}
+
+@-webkit-keyframes error {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%, -10%);
+            transform: translateY(50%, -10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+  }
+}
+
+@keyframes error {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%, -10%);
+            transform: translateY(50%, -10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+  }
+}
 /*# sourceMappingURL=styles.css.map */

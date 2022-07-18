@@ -30,7 +30,3 @@
   font-weight: $weight;
   text-align: $align;
 }
-
-@mixin random-background($number) {
-  background-image: url("../img/" + $number + ".png");
-}

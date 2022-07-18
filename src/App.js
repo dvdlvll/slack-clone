@@ -8,6 +8,7 @@ import styled from "styled-components";
 // components //
 import Chat from "./components/Chat";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
@@ -40,7 +41,7 @@ function App() {
             <Sidebar />
             <Routes>
               <Route path="/channel" element={<Chat />} />
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<Register />} />
             </Routes>
           </Main>
         </Container>

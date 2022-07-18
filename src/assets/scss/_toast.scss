@@ -1,0 +1,32 @@
+.toast-message {
+  @include position-properties(absolute, 3%, 50%);
+  @include font-properties(white, $roboto, 14px, 400, center);
+
+  padding: 10px 1em 10px 1em;
+  margin: 50px auto;
+  transform: translate(50%, -10%);
+
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+
+  animation: error 0.2s ease forwards;
+}
+
+.toast-message-success {
+  background-color: rgb(41, 172, 135);
+}
+
+.toast-message-error {
+  background-color: rgb(249, 89, 89);
+}
+
+@keyframes error {
+  0% {
+    opacity: 0;
+    transform: translateY(50%, -10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(50%, 0);
+  }
+}
