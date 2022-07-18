@@ -3,8 +3,8 @@ import React, { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 // axios //
-import { postCall } from "../data/api-calls";
-import { REGISTER_ENDPOINT } from "../data/api-urls";
+import { postCall } from "../utils/api-calls";
+import { REGISTER_ENDPOINT } from "../utils/api-urls";
 
 // parts //
 import Button from "./Button";
@@ -12,10 +12,12 @@ import Toast from "./Toast";
 
 // component //
 function Register() {
+  // inputs //
   const registerEmailRef = useRef(null);
   const registerPasswordRef = useRef(null);
   const registerConfirmPasswordRef = useRef(null);
 
+  // toast //
   const [message, setMessage] = useState();
   const [showToast, setShowToast] = useState(false);
   const [showRegError, setShowRegError] = useState(false);
@@ -69,7 +71,6 @@ function Register() {
           setShowToast(false);
         }, 3000);
         setIsSuccess(true);
-        console.log("success", onSuccess);
       };
 
       const onError = () => {
@@ -79,7 +80,6 @@ function Register() {
           setShowToast(false);
         }, 3000);
         setIsSuccess(false);
-        console.log("err", onError);
       };
 
       postCall(REGISTER_ENDPOINT, data, emptyObj, onSuccess, onError);
@@ -108,7 +108,7 @@ function Register() {
             name="register-email"
             id="register-email"
             ref={registerEmailRef}
-            autocomplete="off"
+            autoComplete="off"
           />
         </label>
 
