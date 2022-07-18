@@ -1,6 +1,7 @@
 /* font */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Roboto:wght@400;700&display=swap");
 /* font weights: 400, 700 */
+/* font weights: 700, 900 */
 /* colors */
 /* sizes */
 * {
@@ -8,17 +9,15 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
 }
 
 .toast-message {
   position: absolute;
   top: 3%;
-  left: 50%;
+  right: 50%;
   color: white;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 1em;
   font-weight: 400;
   text-align: center;
   padding: 10px 1em 10px 1em;
@@ -33,11 +32,11 @@
 }
 
 .toast-message-success {
-  background-color: #29ac87;
+  background-color: #b5e3d4;
 }
 
 .toast-message-error {
-  background-color: #f95959;
+  background-color: #ef7c8e;
 }
 
 @-webkit-keyframes error {
@@ -63,6 +62,267 @@
     opacity: 1;
     -webkit-transform: translate(50%, 0);
             transform: translate(50%, 0);
+  }
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px 1em 10px 1em;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: bolder;
+  text-align: center;
+  text-decoration: none;
+  background: none;
+  background-color: #ef7c8e;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0.5vmin 1vmin 0vmin rgba(255, 128, 128, 0.1);
+          box-shadow: 0 0.5vmin 1vmin 0vmin rgba(255, 128, 128, 0.1);
+  cursor: pointer;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+}
+
+.button:hover {
+  background-color: #ea7481;
+}
+
+.button:active {
+  background-color: #ef7c8e;
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
+}
+
+/*
+.back-button {
+  background: none;
+  border: none;
+  width: 2em;
+  height: 4em;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+
+.back-button svg {
+  stroke: var(--darkest-color);
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}
+
+.close-button,
+.close-button-sidebar {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  margin-right: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.1s ease;
+  color: var(--darkest-color);
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+.close-button {
+  margin-top: -8px;
+}
+
+.close-button:hover,
+.close-button-sidebar:hover {
+  opacity: 0.8;
+  color: var(--accent-color);
+}
+
+@media screen and (min-width: 900px) {
+  .back-button {
+    display: none;
+  }
+}
+*/
+.landing-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+
+.landing-hero {
+  display: none;
+}
+
+.landing-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 10%;
+}
+
+.landing-title {
+  color: black;
+  font-family: "Inter", sans-serif;
+  font-size: 3em;
+  font-weight: 900;
+}
+
+.landing-subtitle {
+  color: #8667ce;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.input-container span {
+  color: grey;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7em;
+  font-weight: 400;
+  text-transform: uppercase;
+  -webkit-transform: translate(20px, 140%);
+          transform: translate(20px, 140%);
+  z-index: 1;
+}
+
+.input-container input {
+  height: 3em;
+  width: 100%;
+  color: black;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #faeee8;
+  padding: 2em 20px 1em 20px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.input-container input:hover {
+  border: 2px solid #b5e3d4;
+}
+
+.checkbox-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox-container input {
+  accent-color: #b5e3d4;
+}
+
+.checkbox-container span {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.landing-switch {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.hyperlink {
+  color: #8667ce;
+}
+
+@media screen and (min-width: 1080px) {
+  .landing-hero {
+    background: url(../images/landinghero.svg);
+    background-size: 70%;
+    width: 55%;
+    height: 100%;
+    display: block;
+  }
+  .landing-main {
+    width: 45%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

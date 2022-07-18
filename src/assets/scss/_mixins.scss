@@ -5,7 +5,12 @@
   align-items: $align;
 }
 
-@mixin position-properties($position, $top: null, $left: null, $z-index: null) {
+@mixin position-properties(
+  $position: null,
+  $top: null,
+  $left: null,
+  $z-index: null
+) {
   position: $position;
   top: $top;
   left: $left;
@@ -13,8 +18,8 @@
 }
 
 @mixin dimension-properties($height, $width) {
-  min-height: $height;
-  min-width: $width;
+  height: $height;
+  width: $width;
 }
 
 @mixin font-properties(

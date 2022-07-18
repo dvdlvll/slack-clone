@@ -1,6 +1,7 @@
 .toast-message {
-  @include position-properties(absolute, 3%, 50%);
-  @include font-properties(white, $roboto, 14px, 400, center);
+  @include position-properties(absolute, 3%);
+  right: 50%;
+  @include font-properties(white, $roboto, 1em, 400, center);
 
   padding: 10px 1em 10px 1em;
   margin: 50px auto;
@@ -13,11 +14,11 @@
 }
 
 .toast-message-success {
-  background-color: rgb(41, 172, 135);
+  background-color: $green1;
 }
 
 .toast-message-error {
-  background-color: rgb(249, 89, 89);
+  background-color: $red1;
 }
 
 @keyframes error {

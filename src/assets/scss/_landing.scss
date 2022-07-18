@@ -1,0 +1,91 @@
+.landing-container {
+  @include flex-properties(row);
+  @include dimension-properties(100vh, 100vw);
+}
+.landing-hero {
+  display: none;
+}
+
+.landing-main {
+  @include flex-properties(column, center);
+  @include position-properties(relative);
+  width: 100%;
+  padding: 10%;
+}
+
+.landing-title {
+  @include font-properties(black, $inter, 3em, 900);
+}
+
+.landing-subtitle {
+  @include font-properties($violet1, $roboto, 1em, 400);
+  margin-bottom: 10px;
+}
+
+.form-container {
+  @include flex-properties(column);
+}
+
+.input-container {
+  @include flex-properties(column, center);
+  width: 100%;
+  margin-bottom: 5px;
+
+  span {
+    @include font-properties(grey, $roboto, 0.7em, 400);
+    text-transform: uppercase;
+    transform: translate(20px, 140%);
+    z-index: 1;
+  }
+
+  input {
+    @include dimension-properties(3em, 100%);
+    @include font-properties(black, $inter, 1.1em, 700);
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid $cream1;
+
+    padding: 2em 20px 1em 20px;
+
+    transition: 0.2s ease;
+  }
+
+  input:hover {
+    border: 2px solid $green1;
+  }
+}
+
+.checkbox-container {
+  @include flex-properties(row, flex-start, center);
+  margin-top: 10px;
+
+  input {
+    accent-color: $green1;
+  }
+  span {
+    @include font-properties(black, $roboto, 0.9em, 400);
+    margin-left: 10px;
+  }
+}
+
+.landing-switch {
+  @include font-properties(black, $roboto, 1em, 400);
+  margin-bottom: 10px;
+}
+
+.hyperlink {
+  color: $violet1;
+}
+
+@media screen and (min-width: 1080px) {
+  .landing-hero {
+    background: url(../images/landinghero.svg);
+    background-size: 70%;
+    width: 55%;
+    height: 100%;
+    display: block;
+  }
+  .landing-main {
+    width: 45%;
+  }
+}

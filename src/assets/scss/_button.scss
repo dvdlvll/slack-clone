@@ -1,5 +1,5 @@
 .button {
-  @include flex-properties($direction, center, center);
+  @include flex-properties(row, center, center);
   align-self: flex-start;
 
   width: 100%;
@@ -12,7 +12,7 @@
   text-decoration: none;
 
   background: none;
-  background-color: rgb(249, 89, 89);
+  background-color: $red1;
 
   border: none;
   border-radius: 10px;
@@ -23,11 +23,11 @@
 }
 
 .button:hover {
-  background-color: rgb(255, 100, 100);
+  background-color: $red2;
 }
 
 .button:active {
-  background-color: rgb(216, 79, 79);
+  background-color: $red1;
   transform: scale(0.97);
 }
 
