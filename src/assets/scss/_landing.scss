@@ -79,10 +79,9 @@
 
 @media screen and (min-width: 1080px) {
   .landing-hero {
+    @include dimension-properties(100%, 55%);
     background: url(../images/landinghero.svg);
     background-size: 70%;
-    width: 55%;
-    height: 100%;
     display: block;
   }
   .landing-main {

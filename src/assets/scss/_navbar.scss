@@ -1,0 +1,55 @@
+nav {
+  @include flex-properties(column, flex-start, center);
+  @include dimension-properties(100vh, 4em);
+  background-color: $green1;
+  position: relative;
+  padding: 10px;
+
+  .nav-link {
+    @include dimension-properties(4em, 4em);
+    @include flex-properties(row, center, center);
+    position: relative;
+    margin: 10px 0 10px 0;
+
+    background: none;
+    border: none;
+    border-radius: 10px;
+
+    transition: 0.1s ease;
+
+    .icon {
+      width: 2.5em;
+      color: white;
+      transition: 0.1s ease;
+    }
+  }
+
+  .nav-link:last-child {
+    margin-top: auto;
+    overflow: hidden;
+  }
+
+  .nav-link:hover {
+    background-color: $green2;
+  }
+
+  .nav-link:active {
+    background-color: $green2;
+    transform: scale(0.9);
+    transition: 0.1s ease;
+
+    .icon {
+      stroke: white;
+    }
+  }
+
+  .nav-link-active {
+    background-color: $green2;
+    border-radius: 10px;
+    transition: 0.1s ease;
+  }
+
+  .nav-link-active:active::before {
+    opacity: 0;
+  }
+}

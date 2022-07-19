@@ -2,30 +2,26 @@
 import "./assets/scss/styles.css";
 
 // react libraries //
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// components //
+import React, { useContext } from "react";
+import { UserContext } from "./utils/context";
 
 // pages //
 import LandingPage from "./pages/LandingPage";
+import MainPage from "./pages/MainPage";
 
 // app //
 function App() {
-  //   const [isLoggedIn, setIsLoggedIn] = useState(null);
-
-  //   useEffect(() => {
-  //     const u = localStorage.getItem("isLoggedIn");
-  //     u && JSON.parse(u) ? setIsLoggedIn(true) : setIsLoggedIn(false);
-  //   }, []);
-
-  //   useEffect(() => {
-  //     localStorage.setItem("isLoggedIn", isLoggedIn);
-  //   }, [isLoggedIn]);
+  const { isLoggedIn } = useContext(UserContext);
 
   return (
     <div className="App">
-      <LandingPage />
+      {isLoggedIn === false && <LandingPage />}
+      {isLoggedIn === true && <MainPage />}
+
+      {/* {isLoggedIn === false && (
+            <Route path="/login" element={<LandingPage />} />
+          )}
+          {isLoggedIn === true && <Route path="/main" element={<MainPage />} />} */}
     </div>
   );
 }

@@ -1,0 +1,6 @@
+.logo {
+  @include dimension-properties(50px, 50px);
+  background: url(../images/logo.svg);
+  background-size: 100%;
+  display: block;
+}

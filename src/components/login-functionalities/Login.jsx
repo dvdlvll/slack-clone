@@ -1,15 +1,16 @@
 // react libraries //
 import React, { useEffect, useState, useRef, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { postCall } from "../utils/api-calls";
-import { LOGIN_ENDPOINT } from "../utils/api-urls";
-import { UserContext } from "../utils/context";
+import { postCall } from "../../utils/api-calls";
+import { LOGIN_ENDPOINT } from "../../utils/api-urls";
+import { UserContext } from "../../utils/context";
 
 // axios //
 
 // parts //
-import Button from "./Button";
-import Toast from "./Toast";
+import Button from "../Button";
+import Toast from "../Toast";
+import Logo from "../Logo";
 
 // component //
 function Login() {
@@ -30,7 +31,6 @@ function Login() {
 
   // toast //
   const [message, setMessage] = useState();
-  const [showToast, setShowToast] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
   // toggle option to local storage //
@@ -66,7 +66,6 @@ function Login() {
         setUser(response.data.data);
         setMessage("Logged in!");
         setIsLoggedIn(true);
-        console.log(response);
 
         // store to local storage //
         if (rememberUser) {
@@ -80,18 +79,21 @@ function Login() {
           // request made and server responded //
           setHeaders("");
           setUser("");
+          setIsSuccess(false);
           setMessage(error.response.data.errors[0]);
           setTimeout(() => {
             setMessage(false);
           }, 3000);
         } else if (error.request) {
           // request made and server did not respond //
+          setIsSuccess(false);
           setMessage("Server error, please try again.");
           setTimeout(() => {
             setMessage(false);
           }, 3000);
         } else {
-          // Something happened in setting up the request that triggered an Error
+          // catch-all error //
+          setIsSuccess(false);
           setMessage("Something went wrong, please try again.");
           setTimeout(() => {
             setMessage(false);
@@ -103,11 +105,11 @@ function Login() {
 
       // error handling for no input //
     } else {
+      setIsSuccess(false);
       setMessage("Please fill out the required fields");
       setTimeout(() => {
         setMessage("");
       }, 3000);
-      setIsSuccess(false);
     }
   };
 
@@ -117,58 +119,68 @@ function Login() {
     const sessionStorageUser = JSON.parse(sessionStorage.getItem("User"));
     const sessionStorageHeaders = JSON.parse(sessionStorage.getItem("Headers"));
 
+    const emptyObj = {};
+
+    // check for current logged in user in session //
     if (sessionStorageUser) {
       setIsLoggedIn(true);
       setHeaders(sessionStorageHeaders);
       setUser(sessionStorageUser);
+
+      // check if there is stored data in local storage //
     } else if (localStorageLoginUser) {
       setLoginMessage("Logging you in...");
       setIsSuccess(true);
 
-      userSessionAPI(localStorageLoginUser)
-        .then((res) => {
-          setHeaders(res.headers);
-          setUser(res.data.data);
-          setLoginMessage("Logged in!");
-          setIsSuccess(true);
-          setIsLoggedIn(true);
-          tokenSessionStorage(res.data.data, res.headers);
-        })
-        .catch((err) => {
-          if (err.response) {
-            // Request made and server responded
-            console.log(err.response.data);
-            console.log(err.response.status);
-            console.log(err.response.headers);
-            setHeaders("");
-            setUser("");
-            setLoginMessage(err.response.data.errors[0]);
-            setTimeout(() => {
-              setLoginMessage("");
-              setIsSuccess(false);
-            }, 3000);
-            setTimeout(() => {
-              setLoginMessage("");
-              setIsSuccess(false);
-            }, 3000);
-          } else if (err.request) {
-            // The request was made but no response was received
-            console.log(err.request);
-            setLoginMessage("Server error, please try again.");
-            setIsSuccess(false);
-            setTimeout(() => {
-              setLoginMessage("");
-            }, 3000);
-          } else {
-            // Something happened in setting up the request that triggered an Error
-            console.log("Error", err.message);
-          }
-        });
+      const onSuccess = (response) => {
+        setHeaders(response.headers);
+        setUser(response.data.data);
+        setLoginMessage("Logged in!");
+        setIsSuccess(true);
+        setIsLoggedIn(true);
+        tokenSessionStorage(response.data.data, response.headers);
+      };
+
+      const onError = (error) => {
+        if (error.response) {
+          // request made and server responded //
+          setHeaders("");
+          setUser("");
+          setIsSuccess(false);
+          setLoginMessage(error.response.data.errors[0]);
+          setTimeout(() => {
+            setLoginMessage("");
+          }, 3000);
+        } else if (error.request) {
+          // request made and server did not respond //
+          setIsSuccess(false);
+          setLoginMessage("Server error, please try again.");
+          setTimeout(() => {
+            setLoginMessage("");
+          }, 3000);
+        } else {
+          // catch-all error //
+          setIsSuccess(false);
+          setLoginMessage("Something went wrong, please try again.");
+          setTimeout(() => {
+            setMessage(false);
+          }, 3000);
+        }
+      };
+
+      postCall(
+        LOGIN_ENDPOINT,
+        localStorageLoginUser,
+        emptyObj,
+        onSuccess,
+        onError
+      );
     }
   }, []);
 
   return (
     <div className="landing-main">
+      <Logo />
       <h2 className="landing-title">Hey there!</h2>
       <p className="landing-subtitle">
         The very cool, totally original messaging app, for the real ones.
@@ -206,7 +218,7 @@ function Login() {
             type="checkbox"
             name="remember-user"
             id="remember-user"
-            onClick={(e) => {
+            onChange={(e) => {
               isRememberUser(e);
             }}
           />

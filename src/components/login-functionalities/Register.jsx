@@ -3,12 +3,12 @@ import React, { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 // axios //
-import { postCall } from "../utils/api-calls";
-import { REGISTER_ENDPOINT } from "../utils/api-urls";
+import { postCall } from "../../utils/api-calls";
+import { REGISTER_ENDPOINT } from "../../utils/api-urls";
 
 // parts //
-import Button from "./Button";
-import Toast from "./Toast";
+import Button from "../Button";
+import Toast from "../Toast";
 
 // component //
 function Register() {
@@ -139,7 +139,7 @@ function Register() {
 
       <div className="landing-switch">
         Already have an account?{" "}
-        <NavLink className="hyperlink" to="/login">
+        <NavLink className="hyperlink" to="/">
           Log in.
         </NavLink>
       </div>
