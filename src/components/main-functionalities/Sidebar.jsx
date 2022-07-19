@@ -15,8 +15,8 @@ const Sidebar = () => {
     sidebarMode,
     logoutFunction,
     currentUser,
-    setShowModal,
-    setShowContent,
+    setShowNewChannelModal,
+    setShowMobile,
     setShowChatInfo,
   } = useContext(UserContext);
 
@@ -28,7 +28,7 @@ const Sidebar = () => {
           to="/new-message"
           className="button"
           onClick={() => {
-            setShowContent(true);
+            setShowMobile(true);
             setShowChatInfo(false);
           }}
         >
@@ -46,7 +46,7 @@ const Sidebar = () => {
           className="button"
           text="Add Channel"
           onClick={() => {
-            setShowModal(true);
+            setShowNewChannelModal(true);
             setShowChatInfo(false);
           }}
         />

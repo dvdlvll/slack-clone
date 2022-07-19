@@ -1,0 +1,12 @@
+.main-container {
+  @include flex-properties(row);
+  @include dimension-properties(100vh, 100vw);
+}
+
+.nav-bars-container {
+  @include flex-properties(row);
+  @include dimension-properties(100%, 100%);
+}
+.nav-bars-container-closed {
+  display: none;
+}
