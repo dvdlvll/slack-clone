@@ -8,11 +8,11 @@ import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import SearchIcon from "@mui/icons-material/Search";
 
 // components //
-// import Pic from '../pic/Pic';
+import Photo from "../Photo";
 
 // component //
 const Navbar = () => {
-  const { setSidebarMode, sidebarMode, handleSetLoadData } =
+  const { currentUser, setSidebarMode, sidebarMode, handleSetLoadData } =
     useContext(UserContext);
 
   return (
@@ -61,7 +61,7 @@ const Navbar = () => {
         }
         onClick={() => setSidebarMode("user")}
       >
-        {/* <Pic id={currentUser.id} name={currentUser.email} /> */}
+        <Photo id={currentUser.id} name={currentUser.email} isProfile="true" />
       </button>
     </nav>
   );

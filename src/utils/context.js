@@ -38,7 +38,7 @@ export const UserProvider = ({ children }) => {
   // sidebar status //
   const [sidebarMode, setSidebarMode] = useState("dm");
 
-  // show chat info in sidebar //
+  // show chat info //
   const [showChatInfo, setShowChatInfo] = useState(false);
   const handleSetShowChatInfo = () => {
     setShowChatInfo((showChatInfo) => !showChatInfo);

@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../utils/context";
-
 import { NavLink } from "react-router-dom";
 
 // components //
 import Button from "../Button";
 // import ChannelList from "../channel/ChannelList";
-// import ContactList from "../contact/ContactList";
+import ContactList from "./ContactList";
 // import Pic from '../pic/Pic';
 // import Search from '../search/Search';
 
@@ -33,8 +32,8 @@ const Sidebar = () => {
           }}
         >
           New message
-        </NavLink>
-        <ContactList /> */}
+        </NavLink> */}
+        <ContactList />
       </div>
     );
   } else if (sidebarMode === "channel") {
