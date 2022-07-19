@@ -1,12 +1,50 @@
 .main-container {
   @include flex-properties(row);
   @include dimension-properties(100vh, 100vw);
+  overflow: hidden;
+  opacity: 0;
+  animation: openApp 0.2s ease forwards;
+}
+
+@keyframes openApp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .nav-bars-container {
   @include flex-properties(row);
   @include dimension-properties(100%, 100%);
 }
+
 .nav-bars-container-closed {
+  display: none;
+}
+
+.main-content {
+  @include flex-properties(row, center, center);
+  @include dimension-properties(100%, 100%);
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateX(5%);
+  animation: openMainContent 0.1s ease forwards;
+}
+
+@keyframes openMainContent {
+  0% {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.main-content-closed {
   display: none;
 }

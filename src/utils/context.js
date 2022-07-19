@@ -85,6 +85,11 @@ export const UserProvider = ({ children }) => {
     return <Navigate to="/login" />;
   };
 
+  // remove @___.___ from email
+  const removeEmail = (email) => {
+    return email.split("@")[0];
+  };
+
   /*==========================================================
   ==========================provider==========================
   ==========================================================*/
@@ -141,6 +146,7 @@ export const UserProvider = ({ children }) => {
         setAllChannelMessages,
 
         logoutFunction,
+        removeEmail,
       }}
     >
       {children}

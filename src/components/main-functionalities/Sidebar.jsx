@@ -50,7 +50,6 @@ const Sidebar = () => {
             setShowChatInfo(false);
           }}
         />
-
         {/* <ChannelList /> */}
       </div>
     );

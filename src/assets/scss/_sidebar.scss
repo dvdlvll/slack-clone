@@ -6,10 +6,10 @@
 
   opacity: 0;
   transform: translateX(-5%);
-  animation: sidebar 0.1s ease forwards;
+  animation: openSidebar 0.1s ease forwards;
 }
 
-@keyframes sidebar {
+@keyframes openSidebar {
   0% {
     opacity: 0;
     transform: translateX(-5%);
@@ -25,7 +25,7 @@
 // }
 
 .sidebar-title {
-  @include font-properties($black1, $roboto, 1.2em, 700, center);
+  @include font-properties($black1, $inter, 1.2em, 900, left);
   margin-top: 15px;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -33,16 +33,10 @@
 }
 
 .user-container {
+  color: $black1;
   display: flex;
   align-items: center;
-  /* padding: 10px;
-    border-radius: 10px; */
 }
-
-/* .user-container:hover {
-    background-color: var(--dark-grey);
-    cursor: pointer;
-} */
 
 .user-email {
   margin-left: 10px;
@@ -50,9 +44,9 @@
   word-break: break-all;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1080px) {
   .sidebar {
     width: 23vw;
-    border-right: 1px solid var(--dark-grey);
+    border-right: 1px solid $cream2;
   }
 }
