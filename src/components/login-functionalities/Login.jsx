@@ -1,11 +1,11 @@
 // react libraries //
 import React, { useEffect, useState, useRef, useContext } from "react";
-import { NavLink } from "react-router-dom";
-import { postCall } from "../../utils/api-calls";
-import { LOGIN_ENDPOINT } from "../../utils/api-urls";
+import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../../utils/context";
 
 // axios //
+import { postCall } from "../../utils/api-calls";
+import { LOGIN_ENDPOINT } from "../../utils/api-urls";
 
 // parts //
 import Button from "../Button";
@@ -230,7 +230,7 @@ function Login() {
 
       <div className="landing-switch">
         Don't have an account yet?{" "}
-        <NavLink className="hyperlink" to="/register">
+        <NavLink className="hyperlink" to="/landing/register">
           Sign up here.
         </NavLink>
       </div>

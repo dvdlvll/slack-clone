@@ -20,9 +20,9 @@
   }
 }
 
-// NavLink button {
-//   text-decoration: none;
-// }
+NavLink button {
+  text-decoration: none;
+}
 
 .sidebar-title {
   @include font-properties($black1, $inter, 1.2em, 900, left);

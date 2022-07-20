@@ -1,7 +1,5 @@
 // react libraries //
 import React, { useContext, useEffect } from "react";
-import { getCall } from "../utils/api-calls";
-import { CHANNELS_ENDPOINT, USERS_ENDPOINT } from "../utils/api-urls";
 import {
   BrowserRouter as Router,
   Routes,
@@ -10,10 +8,16 @@ import {
 } from "react-router-dom";
 import { UserContext } from "../utils/context";
 
+// axios //
+import { getCall } from "../utils/api-calls";
+import { CHANNELS_ENDPOINT, USERS_ENDPOINT } from "../utils/api-urls";
+
 // components //
 import Loading from "../components/Loading";
 import Navbar from "../components/main-functionalities/Navbar";
 import Sidebar from "../components/main-functionalities/Sidebar";
+import NewChannel from "../components/main-functionalities/NewChannel";
+import LandingPage from "./LandingPage";
 
 function MainPage() {
   // context //
@@ -22,15 +26,14 @@ function MainPage() {
     currentUser,
     setChannelList,
     setAllUsers,
-    setContactList,
     allUsers,
     channelList,
-    contactList,
     showNewChannelModal,
     setShowNewChannelModal,
     loadData,
     showMobile,
     showChatInfo,
+    removeEmail,
   } = useContext(UserContext);
 
   const runAPIs = () => {
@@ -55,7 +58,6 @@ function MainPage() {
       setChannelList(response);
     };
     const onSuccessContacts = (response) => {
-      setContactList(response);
       setAllUsers(response);
     };
     const onError = (error) => {
@@ -84,18 +86,18 @@ function MainPage() {
     runAPIs();
   }, [loadData]);
 
-  if (!channelList.data || !allUsers || !contactList) {
+  if (!channelList.data || !allUsers) {
     return <Loading />;
   } else {
     return (
       <div className="main-container">
         {/* show modal to create new channel */}
-        {/* {showModal ? (
-        <NewChannel
-          showNewChannelModal={showNewChannelModal}
-          setShowNewChannelModal={setShowNewChannelModal}
-        />
-      ) : null} */}
+        {showNewChannelModal ? (
+          <NewChannel
+            showNewChannelModal={showNewChannelModal}
+            setShowNewChannelModal={setShowNewChannelModal}
+          />
+        ) : null}
 
         {/* nav bars */}
         <div
@@ -110,28 +112,31 @@ function MainPage() {
         </div>
 
         {/* main content */}
-        {/* <Router>
-      <Routes>
-        <Route path="/" exact>
-          <div
-            className={
-              !showMobile
-                ? "main-content main-content-closed"
-                : showChatInfo
-                ? "main-content main-content-closed"
-                : "main-content"
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div
+                className={
+                  !showMobile
+                    ? "main-content main-content-closed"
+                    : showChatInfo
+                    ? "main-content main-content-closed"
+                    : "main-content"
+                }
+              >
+                <div className="message-container-empty">
+                  <span className="empty-title">
+                    Welcome back, {removeEmail(currentUser.email)}!
+                  </span>
+                  <p>Send a message or choose a contact to get started.</p>
+                </div>
+              </div>
             }
-          >
-            <div className="message-container-empty">
-              <span className="empty-title">
-                Welcome back, {removeEmail(currentUser.email)}!
-              </span>
-              <p>Send a message or choose a contact to get started.</p>
-            </div>
-          </div>
-        </Route>
-      </Routes>
-    </Router> */}
+          ></Route>
+          <Route path="/:type/:id" element={<LandingPage />} />
+          <Route exact path="/new-message" element={<LandingPage />} />
+        </Routes>
       </div>
     );
   }

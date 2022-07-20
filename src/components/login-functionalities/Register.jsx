@@ -139,7 +139,7 @@ function Register() {
 
       <div className="landing-switch">
         Already have an account?{" "}
-        <NavLink className="hyperlink" to="/">
+        <NavLink className="hyperlink" to="/landing/login">
           Log in.
         </NavLink>
       </div>

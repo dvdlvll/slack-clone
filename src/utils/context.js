@@ -49,7 +49,6 @@ export const UserProvider = ({ children }) => {
   // list of data //
   const [channelList, setChannelList] = useState("");
   const [allUsers, setAllUsers] = useState("");
-  const [contactList, setContactList] = useState("");
   const [addUsers, setAddUsers] = useState([]);
   const [userIds, setUserIds] = useState([]);
 
@@ -80,12 +79,12 @@ export const UserProvider = ({ children }) => {
     setShowMobile(false);
     setAllChannelMessages();
     setMessages();
-    setContactList("");
+    setAllUsers("");
     setChannelList("");
     return <Navigate to="/login" />;
   };
 
-  // remove @___.___ from email
+  // get username from email string
   const removeEmail = (email) => {
     return email.split("@")[0];
   };
@@ -133,8 +132,6 @@ export const UserProvider = ({ children }) => {
         setChannelList,
         allUsers,
         setAllUsers,
-        contactList,
-        setContactList,
         addUsers,
         setAddUsers,
         userIds,

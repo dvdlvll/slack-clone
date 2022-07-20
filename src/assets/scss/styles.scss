@@ -9,8 +9,16 @@
 @import "./loading";
 @import "./photo";
 
+// sidebar //
 @import "./navbar";
 @import "./sidebar";
+@import "./contactlist";
+@import "./channellist";
+
+//new channel modal //
+@import "./newchannel";
+@import "./search";
+@import "./searchuser";
 
 // pages //
 @import "./landing";

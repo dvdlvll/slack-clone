@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 
 // components //
 import Button from "../Button";
-// import ChannelList from "../channel/ChannelList";
+import ChannelList from "./ChannelList";
 import ContactList from "./ContactList";
-// import Pic from '../pic/Pic';
-// import Search from '../search/Search';
+import Photo from "../Photo";
+import Search from "./Search";
 
 const Sidebar = () => {
   const {
@@ -23,7 +23,7 @@ const Sidebar = () => {
     return (
       <div className="sidebar">
         <h1 className="sidebar-title">Direct messages</h1>
-        {/* <NavLink
+        <NavLink
           to="/new-message"
           className="button"
           onClick={() => {
@@ -32,7 +32,7 @@ const Sidebar = () => {
           }}
         >
           New message
-        </NavLink> */}
+        </NavLink>
         <ContactList />
       </div>
     );
@@ -49,14 +49,14 @@ const Sidebar = () => {
             setShowChatInfo(false);
           }}
         />
-        {/* <ChannelList /> */}
+        <ChannelList />
       </div>
     );
   } else if (sidebarMode === "search") {
     return (
       <div className="sidebar">
         <h1 className="sidebar-title">Search</h1>
-        {/* <Search placeholder={"Search for a user"} type="user" /> */}
+        <Search />
       </div>
     );
   } else if (sidebarMode === "user") {
@@ -64,7 +64,7 @@ const Sidebar = () => {
       <div className="sidebar">
         <h1 className="sidebar-title">User</h1>
         <div className="user-container">
-          {/* <Pic id={currentUser.id} name={currentUser.email} /> */}
+          <Photo id={currentUser.id} name={currentUser.email} />
           <span className="user-email">{currentUser.email}</span>
         </div>
         <Button onClick={logoutFunction} text="Logout" className="button" />

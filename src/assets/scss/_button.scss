@@ -53,24 +53,21 @@
 .back-button:hover {
   opacity: 0.8;
 }
+*/
 
 .close-button,
 .close-button-sidebar {
-  background: none;
-  border: none;
-  width: 100%;
-  height: 100%;
+  @include dimension-properties(100%, 100%);
+  @include flex-properties(row, center, center);
+  @include font-properties($black1, $inter, 1.2em, 900, center);
   margin-right: 15px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: none;
+  border: none;
   border-radius: 30px;
+
   cursor: pointer;
   transition: 0.1s ease;
-  color: var(--darkest-color);
-  font-weight: bolder;
-  font-size: 1.2em;
 }
 
 .close-button {
@@ -80,12 +77,11 @@
 .close-button:hover,
 .close-button-sidebar:hover {
   opacity: 0.8;
-  color: var(--accent-color);
+  color: $red1;
 }
 
-@media screen and (min-width: 900px) {
-  .back-button {
-    display: none;
-  }
-}
-*/
+// @media screen and (min-width: 900px) {
+//   .back-button {
+//     display: none;
+//   }
+// }
