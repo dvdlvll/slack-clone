@@ -13,5 +13,3 @@ export const ADD_MEMBER_ENDPOINT = `/api/v1/channel/add_member`;
 // add member (POST)
 export const SEND_ENDPOINT = `api/v1/messages`;
 // send message (POST)
-// export const RECEIVE_ENDPOINT = `/api/v1/messages?receiver_id=${data.user_id}&receiver_class=${data.receiver_class}`;
-// receive messages (GET)
