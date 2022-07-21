@@ -1,0 +1,23 @@
+.loading-container {
+  @include dimension-properties(100vh, 100%);
+  @include position-properties(relative, 0, 0, 100);
+  @include flex-properties(column, center, center);
+  user-select: none;
+  animation: loading 1s ease-in-out infinite;
+}
+
+.loading-logo {
+  @include dimension-properties(10vh, 100%);
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

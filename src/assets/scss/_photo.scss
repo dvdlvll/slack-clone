@@ -1,0 +1,41 @@
+.photo-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dp {
+  @include dimension-properties(2.5em, 2.5em);
+  max-width: 2.5em;
+  max-height: 2.5em;
+  min-width: 2.5em;
+  min-height: 2.5em;
+  @include flex-properties(row, center, center);
+  @include font-properties(white, $inter, large, 900, center);
+  border-radius: 50%;
+}
+
+.not-dp {
+  @include dimension-properties(1.5em, 1.5em);
+  max-width: 1.5em;
+  max-height: 1.5em;
+  min-width: 1.5em;
+  min-height: 1.5em;
+  @include flex-properties(row, center, center);
+  @include font-properties(white, $inter, large, 700, center);
+  border-radius: 50%;
+}
+
+.cp-container {
+  @include flex-properties(row, center, center);
+  @include dimension-properties(1.2em, 1.2em);
+  position: relative;
+  left: -1em;
+  margin-right: -1em;
+  background-color: $red2;
+  border-radius: 100px;
+
+  .cp-icon {
+    color: white;
+    width: 80%;
+  }
+}

@@ -1,0 +1,88 @@
+// .chip {
+//   display: inline-block;
+//   padding: 0 25px;
+//   height: 50px;
+//   font-size: 16px;
+//   line-height: 50px;
+//   border-radius: 25px;
+//   background-color: #f1f1f1;
+// }
+
+// .chip img {
+//   float: left;
+//   margin: 0 10px 0 -25px;
+//   height: 50px;
+//   width: 50px;
+//   border-radius: 50%;
+// }
+
+// .closebtn {
+//   padding-left: 10px;
+//   color: #888;
+//   font-weight: bold;
+//   float: right;
+//   font-size: 20px;
+//   cursor: pointer;
+// }
+
+// .closebtn:hover {
+//   color: #000;
+// }
+
+.newchannel-search-results {
+  @include position-properties(absolute, 100%, auto, 999);
+  width: 100%;
+  border-radius: 10px;
+  background-color: $cream2;
+}
+
+.newchannel-users-container {
+  @include dimension-properties(100%, 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: $cream1;
+  border-radius: 10px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+.newchannel-users-container::-webkit-scrollbar {
+  display: none;
+}
+
+.newchannel-users-container-label {
+  z-index: 1;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  color: grey;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.select-users-container {
+  @include flex-properties(row, flex-start, center);
+  @include dimension-properties(fit-content, auto);
+  background: white;
+
+  padding: 10px;
+  border-radius: 100px;
+  margin-left: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.select-users-container:hover {
+  background-color: $cream2;
+}
+
+.select-users-container span {
+  margin-left: 10px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

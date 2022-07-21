@@ -1,0 +1,67 @@
+.channel-modal-container {
+  @include position-properties(fixed, 0, 0, 100);
+  @include dimension-properties(100%, 100%);
+  @include flex-properties(row, center, center);
+
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+
+  animation: modalAnimation 0.2s ease forwards;
+}
+
+.channel-modal {
+  @include dimension-properties(100%, 100%);
+  @include flex-properties(column, space-between, flex-start);
+  background-color: white;
+
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  animation: openSidebar 0.2s ease forwards;
+}
+
+.modal-upperhalf {
+  width: 100%;
+  @include flex-properties(column);
+}
+
+.modal-title {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 0.1fr 3fr;
+  grid-gap: 20px;
+}
+
+.newchannel-input-container {
+  @include flex-properties(column);
+  width: 100%;
+  position: relative;
+  transition: max-height 0.2s ease;
+}
+
+@media screen and (min-width: 1080px) {
+  .channel-modal-container {
+    @include position-properties(fixed, 0, 0, 100);
+    @include dimension-properties(100%, 100%);
+    @include flex-properties(row, center, center);
+
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+
+    animation: modalAnimation 0.2s ease forwards;
+  }
+  .channel-modal {
+    @include dimension-properties(70%, 50%);
+    @include flex-properties(column, space-between, flex-start);
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    animation: openSidebar 0.2s ease forwards;
+  }
+}
+
+@keyframes modalAnimation {
+  100% {
+    opacity: 1;
+  }
+}

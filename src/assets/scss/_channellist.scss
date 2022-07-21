@@ -1,0 +1,78 @@
+.channel-container {
+  @include dimension-properties(90%, 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 30px;
+}
+
+.channel-container-empty {
+  @include flex-properties(column, center, center);
+  height: 90%;
+  text-align: center;
+  user-select: none;
+
+  .empty-title {
+    @include font-properties($black1, $roboto, 1.2em, 700, center);
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+.channel-item {
+  @include flex-properties(row, flex-start, center);
+  border-radius: 10px;
+  padding: 10px;
+
+  text-decoration: none;
+  color: $black1;
+
+  transition: 0.1s ease;
+  cursor: pointer;
+
+  width: 100%;
+  overflow: hidden;
+}
+
+.channel-item:hover,
+.selected-message {
+  background-color: $cream2;
+}
+
+.channel-item:active {
+  transform: scale(0.95);
+}
+
+.inbox-info {
+  @include flex-properties(column);
+  width: 100%;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+.inbox-name {
+  font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.recent-message-container {
+  color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  font-size: 0.9em;
+}
+
+.recent-message-sender {
+  margin-right: 3px;
+}
+
+.recent-message {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}

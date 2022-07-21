@@ -1,0 +1,49 @@
+.users-container {
+  @include dimension-properties(90%, 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 30px;
+}
+
+.users-container::-webkit-scrollbar {
+  display: none;
+}
+
+.users-container-empty {
+  @include flex-properties(column, center, center);
+  height: 90%;
+  text-align: center;
+  user-select: none;
+
+  .empty-title {
+    @include font-properties($black1, $roboto, 1.2em, 700, center);
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+.user-item {
+  @include flex-properties(row, flex-start, center);
+  border-radius: 10px;
+  padding: 10px;
+
+  text-decoration: none;
+  color: $black1;
+
+  transition: 0.1s ease;
+  cursor: pointer;
+
+  span {
+    margin-left: 10px;
+    word-break: break-all;
+  }
+}
+
+.user-item:hover,
+.selected-message {
+  background-color: $cream2;
+}
+
+.user-item:active {
+  transform: scale(0.95);
+}
