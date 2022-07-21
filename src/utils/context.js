@@ -43,7 +43,7 @@ export const UserProvider = ({ children }) => {
   const handleSetShowChatInfo = () => {
     setShowChatInfo((showChatInfo) => !showChatInfo);
   };
-  const [chatInfo, setChatInfo] = useState({});
+  const [chatInfo, setChatInfo] = useState();
   const [chatName, setChatName] = useState();
 
   // list of data //

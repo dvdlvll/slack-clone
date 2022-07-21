@@ -181,6 +181,12 @@ body {
   color: #ef7c8e;
 }
 
+@media screen and (min-width: 1080px) {
+  .back-button {
+    display: none;
+  }
+}
+
 .logo {
   height: 50px;
   width: 50px;
@@ -882,6 +888,81 @@ NavLink button {
 
 .search-results span {
   margin-left: 10px;
+}
+
+.newmsg-search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #b5e3d4;
+  border-bottom: #a2dab7;
+}
+
+.newmsg-search-container span:first-child {
+  font-weight: 700;
+}
+
+.newmsg-search-input-container {
+  width: 100%;
+}
+
+.newmsg-search-input-container input {
+  width: 100%;
+  min-width: 100%;
+  border: none;
+  outline: none;
+  background: white;
+  font-size: 1.1em;
+  padding: 20px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.newmsg-search-results {
+  width: 100%;
+  max-height: 50%;
+  overflow: scroll;
+  padding: 15px;
+  background-color: #faeee8;
+  border-bottom: 1px solid #e5cec2;
+  -webkit-animation: openSearch 0.3s ease;
+          animation: openSearch 0.3s ease;
+}
+
+.newmsg-search-results::-webkit-scrollbar {
+  display: none;
+}
+
+@-webkit-keyframes openSearch {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 50%;
+  }
+}
+
+@keyframes openSearch {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 50%;
+  }
 }
 
 .newmsg-search-item,

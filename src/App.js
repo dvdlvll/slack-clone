@@ -13,18 +13,30 @@ import PublicRoute from "./components/PublicRoute";
 // pages //
 import LandingPage from "./pages/LandingPage";
 import MainPage from "./pages/MainPage";
-import Login from "./components/login-functionalities/Login";
-import Register from "./components/login-functionalities/Register";
 
 // app //
 function App() {
+  const { isLoggedIn } = useContext(UserContext);
+
   return (
     <div className="App">
       <Routes>
         <Route
+          path="/main"
+          element={
+            <PrivateRoute isLoggedIn={isLoggedIn}>
+              <MainPage />
+            </PrivateRoute>
+          }
+        >
+          <Route path="welcome" />
+          <Route path="new-message" />
+        </Route>
+
+        <Route
           path="/landing"
           element={
-            <PublicRoute>
+            <PublicRoute isLoggedIn={isLoggedIn}>
               <LandingPage />
             </PublicRoute>
           }
@@ -32,15 +44,6 @@ function App() {
           <Route path="login" />
           <Route path="register" />
         </Route>
-
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <MainPage />
-            </PrivateRoute>
-          }
-        ></Route>
       </Routes>
       {/* {isLoggedIn === false && <LandingPage />}
       {isLoggedIn === true && <MainPage />} */}

@@ -1,11 +1,6 @@
 // react libraries //
 import React, { useContext, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { UserContext } from "../utils/context";
 
 // axios //
@@ -14,10 +9,10 @@ import { CHANNELS_ENDPOINT, USERS_ENDPOINT } from "../utils/api-urls";
 
 // components //
 import Loading from "../components/Loading";
-import Navbar from "../components/main-functionalities/Navbar";
-import Sidebar from "../components/main-functionalities/Sidebar";
-import NewChannel from "../components/main-functionalities/NewChannel";
-import LandingPage from "./LandingPage";
+import Navbar from "../components/main-functionalities/navs/Navbar";
+import Sidebar from "../components/main-functionalities/navs/Sidebar";
+import NewChannel from "../components/main-functionalities/navs/NewChannel";
+import SearchMessage from "../components/main-functionalities/search/SearchMessage";
 
 function MainPage() {
   // context //
@@ -112,9 +107,9 @@ function MainPage() {
         </div>
 
         {/* main content */}
-        <Routes>
+        {/* <Routes>
           <Route
-            path="/"
+            path="welcome"
             element={
               <div
                 className={
@@ -133,10 +128,11 @@ function MainPage() {
                 </div>
               </div>
             }
-          ></Route>
-          <Route path="/:type/:id" element={<LandingPage />} />
-          <Route exact path="/new-message" element={<LandingPage />} />
-        </Routes>
+          />
+          <Route path=":type/:id" element={<></>} />
+          <Route path="new-message" element={<></>} />
+          <Route path="*" element={<Navigate to="" replace />} />
+        </Routes> */}
       </div>
     );
   }
