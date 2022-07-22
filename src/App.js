@@ -4,7 +4,7 @@ import "./assets/scss/styles.css";
 // react libraries //
 import React, { useContext } from "react";
 import { UserContext } from "./utils/context";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // components //
 import PrivateRoute from "./components/PrivateRoute";
@@ -30,6 +30,7 @@ function App() {
           }
         >
           <Route path="welcome" />
+          <Route path=":type/:id" />
           <Route path="new-message" />
         </Route>
 
@@ -45,6 +46,7 @@ function App() {
           <Route path="register" />
         </Route>
       </Routes>
+
       {/* {isLoggedIn === false && <LandingPage />}
       {isLoggedIn === true && <MainPage />} */}
 

@@ -36,24 +36,3 @@ export const postCall = async (
     .then((response) => onSuccess(response))
     .catch((error) => onError(error));
 };
-
-export const getMessageCall = async (
-  endpoint,
-  paramsObj,
-  headerObj,
-  onSuccess,
-  onError
-) => {
-  return apiInstance
-    .get(
-      endpoint,
-      {
-        params: paramsObj,
-      },
-      {
-        headers: headerObj,
-      }
-    )
-    .then((response) => onSuccess(response))
-    .catch((error) => onError(error));
-};

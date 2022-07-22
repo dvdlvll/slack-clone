@@ -5,17 +5,17 @@ import { UserContext } from "../../../utils/context";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 
 // axios //
-import { getMessageCall } from "../../../utils/api-calls";
+import { postCall } from "../../../utils/api-calls";
 import { SEND_ENDPOINT } from "../../../utils/api-urls";
 
 // component //
-function Input() {
+function Input({ type, id, newMsg, setNewMessageUser }) {
   const { currentHeaders, handleSetLoadData } = useContext(UserContext);
 
   let messageInputRef = useRef(null);
   let navigate = useNavigate();
 
-  const sendMessage = ({ type, id, newMsg, setNewMessageUser }) => {
+  const sendMessage = () => {
     if (
       (messageInputRef.current.value !== null ||
         messageInputRef.current.value !== "") &&
@@ -31,20 +31,21 @@ function Input() {
       let sendMessageParams = {
         receiver_id: parseInt(id),
         receiver_class: type.charAt(0).toUpperCase() + type.slice(1),
-        message: messageInputRef.current.value,
+        body: messageInputRef.current.value,
       };
 
       // set success and error //
-      let onSuccessMessage = () => {
+      let onSuccessMessage = (response) => {
         handleSetLoadData();
         messageInputRef.current.value = "";
+        console.log(response);
       };
       let onSuccessError = (error) => {
         console.log(error);
       };
 
       // call //
-      getMessageCall(
+      postCall(
         SEND_ENDPOINT,
         sendMessageParams,
         sendMessageRequest,
@@ -58,7 +59,7 @@ function Input() {
         newMsg &&
         id !== null
       ) {
-        navigate(`user/${id}`);
+        navigate(`/main/user/${id}`);
         setNewMessageUser();
       }
     }

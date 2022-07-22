@@ -4,7 +4,7 @@ import { UserContext } from "../../../utils/context";
 import { NavLink } from "react-router-dom";
 
 // axios //
-import { getMessageCall } from "../../../utils/api-calls";
+import { getCall } from "../../../utils/api-calls";
 import { SEND_ENDPOINT } from "../../../utils/api-urls";
 
 // components //
@@ -39,6 +39,7 @@ function ChannelList() {
             receiver_id: parseInt(channelList.data.data[i].id),
             receiver_class: "Channel",
           };
+          let emptyObj = {};
 
           // set success and error //
           let onSuccessMessage = (response) => {
@@ -68,11 +69,9 @@ function ChannelList() {
           };
 
           // axios call //
-          getMessageCall(
-            `${SEND_ENDPOINT}?receiver_id=${
-              Object.values(recentChannelMsgsParams)[0]
-            }&receiver_class=${Object.values(recentChannelMsgsParams)[1]}`,
-            recentChannelMsgsParams,
+          getCall(
+            `${SEND_ENDPOINT}?receiver_id=${recentChannelMsgsParams.receiver_id}&receiver_class=${recentChannelMsgsParams.receiver_class}`,
+            emptyObj,
             recentChannelMsgsRequest,
             onSuccessMessage,
             onError
@@ -119,7 +118,7 @@ function ChannelList() {
       <div className="channel-container">
         {channelList.data.data.map((channel, index) => (
           <NavLink
-            to={`/channel/${channel.id}`}
+            to={`channel/${channel.id}`}
             className={(isActive) =>
               "channel-item" + (!isActive ? " selected-message" : "")
             }
@@ -138,7 +137,7 @@ function ChannelList() {
             />
             <div className="inbox-info">
               <span className="inbox-name">{channel.name}</span>
-              {/* {displayRecentChannelMsgs(channel)} */}
+              {displayRecentChannelMsgs(channel)}
             </div>
           </NavLink>
         ))}

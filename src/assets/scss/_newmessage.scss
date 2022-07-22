@@ -1,0 +1,54 @@
+.new-messages-section {
+  @include dimension-properties(100%, 100%);
+  @include flex-properties(column, space-between);
+  overflow: hidden;
+}
+
+.new-messages-header {
+  overflow: hidden;
+}
+
+.newmsg-user-container {
+  background: $cream1;
+  @include flex-properties(row, flex-start, center);
+  padding: 10px;
+
+  margin-left: 15px;
+  width: auto;
+  border-radius: 100px;
+  overflow: hidden;
+
+  span {
+    margin-left: 10px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.delete-user-button {
+  @include flex-properties(row, center, center);
+  @include dimension-properties(1.6em, 1.6em);
+  min-height: 1.6em;
+  min-width: 1.6em;
+
+  margin-left: 20px;
+  padding-bottom: 1px;
+
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  color: white;
+
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.delete-user-button:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.delete-user-button:active {
+  background: rgba(0, 0, 0, 0.4);
+  transform: scale(0.9);
+}

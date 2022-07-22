@@ -31,29 +31,22 @@
   transform: scale(0.97);
 }
 
-/*
 .back-button {
+  @include dimension-properties(4em, 2em);
+  @include flex-properties(row, center, center);
   background: none;
   border: none;
-  width: 2em;
-  height: 4em;
+  color: white;
   margin-right: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 30px;
-  cursor: pointer;
-  transition: 0.1s ease;
-}
 
-.back-button svg {
-  stroke: var(--darkest-color);
+  transition: 0.1s ease;
+  cursor: pointer;
 }
 
 .back-button:hover {
   opacity: 0.8;
 }
-*/
 
 .close-button,
 .close-button-sidebar {

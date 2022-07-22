@@ -12,7 +12,9 @@ import Loading from "../components/Loading";
 import Navbar from "../components/main-functionalities/navs/Navbar";
 import Sidebar from "../components/main-functionalities/navs/Sidebar";
 import NewChannel from "../components/main-functionalities/navs/NewChannel";
-import SearchMessage from "../components/main-functionalities/search/SearchMessage";
+import MessageSidebar from "../components/main-functionalities/message/MessageSidebar";
+import Messages from "../components/main-functionalities/message/Messages";
+import NewMessage from "../components/main-functionalities/navs/NewMessage";
 
 function MainPage() {
   // context //
@@ -107,7 +109,7 @@ function MainPage() {
         </div>
 
         {/* main content */}
-        {/* <Routes>
+        <Routes>
           <Route
             path="welcome"
             element={
@@ -129,10 +131,11 @@ function MainPage() {
               </div>
             }
           />
-          <Route path=":type/:id" element={<></>} />
-          <Route path="new-message" element={<></>} />
-          <Route path="*" element={<Navigate to="" replace />} />
-        </Routes> */}
+          <Route path=":type/:id" element={<Messages />} />
+          <Route path="new-message" element={<NewMessage />} />
+        </Routes>
+
+        <MessageSidebar />
       </div>
     );
   }

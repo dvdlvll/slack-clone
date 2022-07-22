@@ -89,6 +89,15 @@ export const UserProvider = ({ children }) => {
     return email.split("@")[0];
   };
 
+  // get name of user from ID number
+  const getUserName = (id) => {
+    for (let i = 0; i < allUsers.data?.data?.length; i++) {
+      if (allUsers.data?.data?.[i].id === id) {
+        return allUsers.data.data[i].email;
+      }
+    }
+  };
+
   /*==========================================================
   ==========================provider==========================
   ==========================================================*/
@@ -144,6 +153,7 @@ export const UserProvider = ({ children }) => {
 
         logoutFunction,
         removeEmail,
+        getUserName,
       }}
     >
       {children}

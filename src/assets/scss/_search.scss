@@ -36,12 +36,13 @@
   @include dimension-properties(70px, 100%);
   overflow: hidden;
   padding: 20px;
-  background-color: $green1;
-  border-bottom: $green2;
+  background-color: $cream1;
+  border-bottom: $cream2;
 }
 
 .newmsg-search-container span:first-child {
   font-weight: 700;
+  margin-right: 10px;
 }
 
 .newmsg-search-input-container {
@@ -49,13 +50,14 @@
 }
 
 .newmsg-search-input-container input {
-  width: 100%;
-  min-width: 100%;
-  border: none;
+  @include dimension-properties(3em, 100%);
+  @include font-properties(black, $inter, 1.1em, 700);
   outline: none;
-  background: white;
-  font-size: 1.1em;
-  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid $green1;
+
+  padding: 20px 20px 20px 20px;
+
   transition: 0.2s ease;
 }
 

@@ -1,0 +1,361 @@
+.messages-section {
+  @include flex-properties(column, space-between);
+  @include dimension-properties(100%, 100%);
+  overflow: hidden;
+}
+.messages-section::-webkit-scrollbar {
+  display: none;
+}
+
+.messages-content {
+  @include flex-properties(column, flex-end, flex-end);
+  @include dimension-properties(100%, 100%);
+  overflow: hidden;
+}
+
+.message-flex {
+  @include flex-properties(column, flex-end);
+  @include dimension-properties(100%, 100%);
+}
+
+.messages-container {
+  overflow: scroll;
+  width: 100%;
+  padding: 30px;
+}
+
+.messages-container::-webkit-scrollbar {
+  display: none;
+}
+
+.photo-message-container {
+  @include flex-properties(row-reverse);
+  width: 100%;
+}
+
+.incoming-messages {
+  @include flex-properties(column);
+  margin-bottom: 10px;
+  word-break: break-word;
+  animation: bubble 0.1s ease forwards;
+}
+
+.outgoing-messages {
+  @include flex-properties(column, row-reverse, flex-end);
+  margin-bottom: 10px;
+  word-break: break-word;
+  animation: bubble 0.3s ease forwards;
+}
+
+@keyframes bubble {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-bubble-sender {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)) top/100% 800%;
+  background-color: $red1;
+  padding: 15px;
+  border-radius: 20px 20px 20px 3px;
+  color: white;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  max-width: 100%;
+  transition: 0.2s ease;
+}
+
+.message-sender-name,
+.message-time-sender {
+  color: white;
+  font-size: small;
+  margin-left: 55px;
+  animation: messageInfo 0.3s ease forwards;
+}
+
+.message-user-name,
+.message-time-user {
+  color: black1;
+  font-size: small;
+  margin-right: 55px;
+  animation: messageInfo 0.3s ease forwards;
+}
+
+@keyframes messageInfo {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 50%;
+  }
+}
+
+.message-bubble-user {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.3)) top/100% 800%;
+  background-color: $cream1;
+  padding: 15px;
+  border-radius: 20px 20px 3px 20px;
+  color: $black1;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  max-width: 100%;
+  transition: 0.2s ease;
+}
+
+.message-bubble-user:hover,
+.message-bubble-sender:hover {
+  background-position: bottom;
+}
+
+.chat-header {
+  @include flex-properties(row);
+  align-items: center;
+  @include position-properties(sticky, 0, 0);
+  @include dimension-properties(70px, 100%);
+  padding: 10px;
+  overflow: hidden;
+  background-color: $green1;
+  border-bottom: 1px solid $green2;
+}
+
+.header-name {
+  @include flex-properties(row);
+  align-items: center;
+  width: 50%;
+}
+
+.chat-name {
+  color: $black1;
+  font-size: 1.2em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chat-name-user {
+  margin-left: 10px;
+}
+
+.message-container-empty {
+  @include flex-properties(column, center, center);
+  align-self: center;
+  @include dimension-properties(100%, 100%);
+
+  text-align: center;
+  user-select: none;
+  overflow: hidden;
+}
+
+.message-input-container {
+  @include flex-properties(row, space-between, center);
+  width: 100%;
+  padding: 10px;
+  background-color: $cream1;
+  border-top: 1px solid $cream2;
+}
+
+.message-input {
+  width: 95%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.message-input input,
+.invite-user-input {
+  @include dimension-properties(3em, 100%);
+  @include font-properties(black, $inter, 1.1em, 700);
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid $green1;
+
+  padding: 20px 20px 20px 20px;
+
+  transition: 0.2s ease;
+}
+
+.message-input input:hover,
+.invite-user-input:hover,
+.message-input input:focus,
+.invite-user-input:focus {
+  border: 2px solid $green2;
+}
+
+.message-input input:focus ~ span {
+  color: $black1;
+}
+
+.send-button {
+  @include dimension-properties(3em, 3em);
+  @include flex-properties(row, center, center);
+  max-width: 3em;
+  max-height: 3em;
+  min-width: 3em;
+  min-height: 3em;
+  background: none;
+  background-color: $red1;
+  color: white;
+  border: none;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.send-button:hover {
+  background-color: $red2;
+}
+
+.send-button:active {
+  transform: scale(0.97);
+}
+
+.message-sidebar {
+  @include dimension-properties(100vh, 100%);
+  @include flex-properties(column);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: $cream1;
+  border-left: 1px solid $cream2;
+  opacity: 0;
+  transform: translateX(5%);
+
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 400px -7px;
+  animation: openMainContent 0.2s ease forwards;
+  overflow: hidden;
+}
+
+.message-sidebar-closed {
+  display: none;
+}
+
+.message-sidebar-toggle {
+  @include flex-properties(row, center, center);
+  width: 1.8em;
+  position: absolute;
+  right: 0;
+
+  margin-right: 1em;
+
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.message-sidebar-toggle:hover {
+  opacity: 0.8;
+}
+
+.message-sidebar-title {
+  @include flex-properties(column);
+  width: 100%;
+  margin-top: 15px;
+}
+
+.invite-user-container {
+  background-color: $cream1;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+}
+
+.invite-user-search-results {
+  position: absolute;
+  z-index: 9999;
+  background-color: $cream1;
+  border-radius: 10px;
+  width: calc(100% - 90px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+
+.invite-users-container {
+  @include flex-properties(row, space-between, center);
+  background: $cream1;
+  padding: 10px;
+  border-radius: 100px;
+  width: auto;
+  overflow: hidden;
+
+  div:first-child {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    span {
+      margin-left: 10px;
+      margin-bottom: 2px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      flex-shrink: 100;
+    }
+  }
+}
+
+.invite-user-toggle {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.invite-user-toggle:hover {
+  background-color: $cream1;
+  color: $black1;
+}
+
+.invite-user-toggle:active {
+  transform: scale(0.95);
+}
+
+.member-list-label {
+  z-index: 1;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  color: grey;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.member-list {
+  @include dimension-properties(100%, 100%);
+  overflow: scroll;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.member-list span:last-child {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 1080px) {
+  .messages-section {
+    @include dimension-properties(100vh, 100%);
+    overflow: scroll;
+    position: relative;
+  }
+  .chat-header {
+    padding: 30px;
+  }
+  .message-bubble-sender,
+  .message-bubble-user {
+    max-width: 50%;
+  }
+  .message-sidebar {
+    width: 25%;
+  }
+}
