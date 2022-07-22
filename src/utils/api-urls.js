@@ -1,4 +1,4 @@
-export const BASE_URL = `206.189.91.54/`;
+export const BASE_URL = `http://206.189.91.54/`;
 
 export const LOGIN_ENDPOINT = `api/v1/auth/sign_in`;
 // signing in (POST)
