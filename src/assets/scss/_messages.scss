@@ -230,7 +230,7 @@
   bottom: 0;
 
   background-color: $cream1;
-  border-left: 1px solid $cream2;
+  border-left: 1px solid $violet1;
   opacity: 0;
   transform: translateX(5%);
 
@@ -276,10 +276,12 @@
 .invite-user-search-results {
   position: absolute;
   z-index: 9999;
-  background-color: $cream1;
+  margin-top: 5px;
+  background-color: white;
+  border: 2px solid $violet1;
   border-radius: 10px;
   width: calc(100% - 90px);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 30px 20px -7px;
 }
 
 .invite-users-container {

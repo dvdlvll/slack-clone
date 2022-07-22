@@ -510,7 +510,7 @@ NavLink button {
 @media screen and (min-width: 1080px) {
   .sidebar {
     width: 30vw;
-    border-right: 1px solid #e5cec2;
+    border-right: 1px solid #8667ce;
   }
 }
 
@@ -1492,7 +1492,7 @@ NavLink button {
   right: 0;
   bottom: 0;
   background-color: #faeee8;
-  border-left: 1px solid #e5cec2;
+  border-left: 1px solid #8667ce;
   opacity: 0;
   -webkit-transform: translateX(5%);
           transform: translateX(5%);
@@ -1557,11 +1557,13 @@ NavLink button {
 .invite-user-search-results {
   position: absolute;
   z-index: 9999;
-  background-color: #faeee8;
+  margin-top: 5px;
+  background-color: white;
+  border: 2px solid #8667ce;
   border-radius: 10px;
   width: calc(100% - 90px);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
-          box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 30px 20px -7px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 30px 20px -7px;
 }
 
 .invite-users-container {
