@@ -8,7 +8,7 @@ import Photo from "../../Photo";
 
 // component //
 function ContactList() {
-  const { allUsers, handleSetLoadData, setShowMobile, setShowChatInfo } =
+  const { allUsers, handleSetLoadData, setShowChatInfo } =
     useContext(UserContext);
 
   if (allUsers.data.data.length === 0) {
@@ -30,7 +30,6 @@ function ContactList() {
             key={index}
             onClick={() => {
               handleSetLoadData();
-              setShowMobile(true);
               setShowChatInfo(false);
             }}
           >

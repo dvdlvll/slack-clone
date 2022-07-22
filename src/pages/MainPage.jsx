@@ -115,11 +115,9 @@ function MainPage() {
             element={
               <div
                 className={
-                  !showMobile
-                    ? "main-content main-content-closed"
-                    : showChatInfo
-                    ? "main-content main-content-closed"
-                    : "main-content"
+                  showMobile === false
+                    ? "main-content"
+                    : "main-content main-content-closed"
                 }
               >
                 <div className="message-container-empty">
@@ -133,6 +131,7 @@ function MainPage() {
           />
           <Route path=":type/:id" element={<Messages />} />
           <Route path="new-message" element={<NewMessage />} />
+          <Route path="*" element={<Navigate to="welcome" replace />} />
         </Routes>
 
         <MessageSidebar />

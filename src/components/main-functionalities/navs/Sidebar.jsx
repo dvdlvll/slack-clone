@@ -15,7 +15,7 @@ const Sidebar = () => {
     logoutFunction,
     currentUser,
     setShowNewChannelModal,
-    setShowMobile,
+
     setShowChatInfo,
   } = useContext(UserContext);
 
@@ -27,7 +27,6 @@ const Sidebar = () => {
           to="new-message"
           className="button"
           onClick={() => {
-            setShowMobile(true);
             setShowChatInfo(false);
           }}
         >

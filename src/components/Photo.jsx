@@ -8,12 +8,12 @@ function Photo({ id, name, isChannel, isProfile }) {
   };
 
   let colors = [
-    "#d5a6bd",
-    "#ef7c8e",
-    "#9d88e7",
-    "#f0ce7c",
-    "#68c8f8",
-    "#fafda4",
+    "#d5a6bd", // pink
+    "#ef7c8e", // red
+    "#f0ce7c", // orange
+    "#68c8f8", // blue
+    "#ffdc17", // yellow
+    "#a2f09e", // green
   ];
 
   let colorNumber;

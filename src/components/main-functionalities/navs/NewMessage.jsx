@@ -10,22 +10,21 @@ import ArrowBackIosSharpIcon from "@mui/icons-material/ArrowBackIosSharp";
 
 function NewMessage() {
   // context, states //
-  const { showMobile, setShowMobile } = useContext(UserContext);
+  const { showMobile } = useContext(UserContext);
   const [newMessageUser, setNewMessageUser] = useState(null);
 
   return (
     <div
       className={
-        showMobile ? "main-content" : "main-content main-content-closed"
+        showMobile === false
+          ? "main-content"
+          : "main-content main-content-closed"
       }
     >
       <div className="new-messages-section">
         <div className="new-messages-header">
           <div className="chat-header">
-            <button
-              className={"back-button"}
-              onClick={() => setShowMobile(false)}
-            >
+            <button className={"back-button"}>
               <ArrowBackIosSharpIcon />
             </button>
             <h1 className="chat-name">New message</h1>

@@ -9,8 +9,7 @@ import Photo from "../../Photo";
 // component //
 function Search() {
   // context //
-  const { allUsers, handleSetLoadData, setShowMobile } =
-    useContext(UserContext);
+  const { allUsers, handleSetLoadData } = useContext(UserContext);
 
   // search setstate //
   const [searchList, setSearchList] = useState([]);
@@ -48,7 +47,6 @@ function Search() {
               key={index}
               onClick={() => {
                 handleSetLoadData();
-                setShowMobile(true);
               }}
             >
               <Photo id={user.id} name={user.email} isChannel={false} />

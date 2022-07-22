@@ -9,14 +9,8 @@ import ArrowBackIosSharpIcon from "@mui/icons-material/ArrowBackIosSharp";
 
 // component //
 function Header({ type, id, messages, channelMembers }) {
-  const {
-    channelList,
-    allUsers,
-    loadData,
-    setShowMobile,
-    chatInfo,
-    setChatInfo,
-  } = useContext(UserContext);
+  const { channelList, allUsers, loadData, chatInfo, setChatInfo } =
+    useContext(UserContext);
 
   useEffect(() => {
     if (type === "channel") {
@@ -46,10 +40,7 @@ function Header({ type, id, messages, channelMembers }) {
     <>
       {chatInfo ? (
         <div className="chat-header">
-          <button
-            className={"back-button"}
-            onClick={() => setShowMobile(false)}
-          >
+          <button className={"back-button"}>
             <ArrowBackIosSharpIcon />
           </button>
 

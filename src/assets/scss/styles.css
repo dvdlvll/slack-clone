@@ -343,7 +343,7 @@ body {
   position: relative;
   left: -1em;
   margin-right: -1em;
-  background-color: #ea7481;
+  background-color: #8667ce;
   border-radius: 100px;
 }
 
@@ -1182,6 +1182,12 @@ NavLink button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: row;
+      -ms-flex-pack: row;
+          justify-content: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   margin-bottom: 10px;
   word-break: break-word;
   -webkit-animation: bubble 0.1s ease forwards;
@@ -1250,7 +1256,7 @@ NavLink button {
 
 .message-sender-name,
 .message-time-sender {
-  color: white;
+  color: #3f3b3a;
   font-size: small;
   margin-left: 55px;
   -webkit-animation: messageInfo 0.3s ease forwards;
@@ -1259,7 +1265,7 @@ NavLink button {
 
 .message-user-name,
 .message-time-user {
-  color: black1;
+  color: #3f3b3a;
   font-size: small;
   margin-right: 55px;
   -webkit-animation: messageInfo 0.3s ease forwards;
@@ -1318,10 +1324,6 @@ NavLink button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
   height: 70px;
   width: 100%;
   padding: 10px;
@@ -1956,7 +1958,7 @@ NavLink button {
       -ms-flex-direction: row;
           flex-direction: row;
   height: 100%;
-  width: 100%;
+  overflow: hidden;
 }
 
 .nav-bars-container-closed {

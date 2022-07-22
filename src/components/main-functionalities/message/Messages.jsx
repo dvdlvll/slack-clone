@@ -33,6 +33,7 @@ function Messages() {
 
   // set header and params //
   const getMessages = () => {
+    // set params and headers //
     let messageRequest = {
       "access-token": currentHeaders["access-token"],
       client: currentHeaders.client,
@@ -100,7 +101,9 @@ function Messages() {
     return (
       <div
         className={
-          showMobile ? "main-content" : "main-content main-content-closed"
+          showMobile === false
+            ? "main-content"
+            : "main-content main-content-closed"
         }
       >
         <div className="messages-section">

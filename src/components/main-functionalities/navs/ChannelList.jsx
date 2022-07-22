@@ -17,10 +17,7 @@ function ChannelList() {
     handleSetLoadData,
     currentHeaders,
     loadData,
-    removeEmail,
-    allChannelMessages,
     setAllChannelMessages,
-    setShowMobile,
     setShowChatInfo,
   } = useContext(UserContext);
 
@@ -81,27 +78,6 @@ function ChannelList() {
     }
   };
 
-  const displayRecentChannelMsgs = (channel) => {
-    for (let i = 0; i < allChannelMessages.length; i++) {
-      if (channel.id === allChannelMessages[i].id) {
-        return (
-          <div className="recent-message-container">
-            {allChannelMessages[i].sender ? (
-              <span className="recent-message-sender">
-                {removeEmail(allChannelMessages[i].sender.email)}:
-              </span>
-            ) : (
-              ""
-            )}
-            <span className="recent-message">
-              {allChannelMessages[i].message}
-            </span>
-          </div>
-        );
-      }
-    }
-  };
-
   useEffect(() => {
     getRecentChannelMsgs();
   }, [loadData, currentHeaders]);
@@ -125,7 +101,6 @@ function ChannelList() {
             key={index}
             onClick={() => {
               handleSetLoadData();
-              setShowMobile(true);
               setShowChatInfo(false);
             }}
           >
@@ -137,7 +112,6 @@ function ChannelList() {
             />
             <div className="inbox-info">
               <span className="inbox-name">{channel.name}</span>
-              {displayRecentChannelMsgs(channel)}
             </div>
           </NavLink>
         ))}

@@ -15,7 +15,6 @@ import Photo from "../../Photo";
 import Toast from "../../Toast";
 import Button from "../../Button";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 function MessageSidebar() {
   // context //
@@ -29,7 +28,6 @@ function MessageSidebar() {
     addUsers,
     getUserName,
     handleSetLoadData,
-    setShowMobile,
     setShowChatInfo,
   } = useContext(UserContext);
 
@@ -261,10 +259,7 @@ function MessageSidebar() {
           onClick={() => {
             setShowInvite(true);
           }}
-        >
-          <FavoriteBorderIcon />
-          <span>Add to favorites</span>
-        </div>
+        ></div>
       )}
 
       {chatName && channelMembers && chatName.isChannel ? (
@@ -278,7 +273,6 @@ function MessageSidebar() {
                 key={index}
                 onClick={() => {
                   handleSetLoadData();
-                  setShowMobile(true);
                   setShowChatInfo(false);
                 }}
               >

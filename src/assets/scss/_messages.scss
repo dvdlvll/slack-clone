@@ -34,7 +34,7 @@
 }
 
 .incoming-messages {
-  @include flex-properties(column);
+  @include flex-properties(column, row, flex-end);
   margin-bottom: 10px;
   word-break: break-word;
   animation: bubble 0.1s ease forwards;
@@ -72,7 +72,7 @@
 
 .message-sender-name,
 .message-time-sender {
-  color: white;
+  color: $black1;
   font-size: small;
   margin-left: 55px;
   animation: messageInfo 0.3s ease forwards;
@@ -80,7 +80,7 @@
 
 .message-user-name,
 .message-time-user {
-  color: black1;
+  color: $black1;
   font-size: small;
   margin-right: 55px;
   animation: messageInfo 0.3s ease forwards;
@@ -117,7 +117,6 @@
 .chat-header {
   @include flex-properties(row);
   align-items: center;
-  @include position-properties(sticky, 0, 0);
   @include dimension-properties(70px, 100%);
   padding: 10px;
   overflow: hidden;
