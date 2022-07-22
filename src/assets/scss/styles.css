@@ -1163,17 +1163,6 @@ NavLink button {
   display: none;
 }
 
-.photo-message-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  width: 100%;
-}
-
 .incoming-messages {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1182,16 +1171,21 @@ NavLink button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: row;
-      -ms-flex-pack: row;
-          justify-content: row;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   margin-bottom: 10px;
   word-break: break-word;
   -webkit-animation: bubble 0.1s ease forwards;
           animation: bubble 0.1s ease forwards;
+}
+
+.incoming-messages .photo-message-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
 }
 
 .outgoing-messages {
@@ -1202,9 +1196,6 @@ NavLink button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: row-reverse;
-      -ms-flex-pack: row-reverse;
-          justify-content: row-reverse;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -1212,6 +1203,17 @@ NavLink button {
   word-break: break-word;
   -webkit-animation: bubble 0.3s ease forwards;
           animation: bubble 0.3s ease forwards;
+}
+
+.outgoing-messages .photo-message-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  width: 100%;
 }
 
 @-webkit-keyframes bubble {
@@ -1243,7 +1245,7 @@ NavLink button {
 .message-bubble-sender {
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.2))) top/100% 800%;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)) top/100% 800%;
-  background-color: #ef7c8e;
+  background-color: #8667ce;
   padding: 15px;
   border-radius: 20px 20px 20px 3px;
   color: white;
@@ -1258,7 +1260,7 @@ NavLink button {
 .message-time-sender {
   color: #3f3b3a;
   font-size: small;
-  margin-left: 55px;
+  margin-left: 35px;
   -webkit-animation: messageInfo 0.3s ease forwards;
           animation: messageInfo 0.3s ease forwards;
 }
@@ -1267,7 +1269,7 @@ NavLink button {
 .message-time-user {
   color: #3f3b3a;
   font-size: small;
-  margin-right: 55px;
+  margin-right: 35px;
   -webkit-animation: messageInfo 0.3s ease forwards;
           animation: messageInfo 0.3s ease forwards;
 }
@@ -1295,8 +1297,8 @@ NavLink button {
 }
 
 .message-bubble-user {
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.3))) top/100% 800%;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.3)) top/100% 800%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.2))) top/100% 800%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)) top/100% 800%;
   background-color: #faeee8;
   padding: 15px;
   border-radius: 20px 20px 3px 20px;

@@ -45,6 +45,8 @@ function App() {
           <Route path="login" />
           <Route path="register" />
         </Route>
+
+        <Route path="/" element={<Navigate to="/landing" />} />
       </Routes>
 
       {/* {isLoggedIn === false && <LandingPage />}

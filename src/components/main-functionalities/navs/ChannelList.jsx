@@ -25,7 +25,7 @@ function ChannelList() {
     if (channelList) {
       if (!channelList.data.errors) {
         // set params and headers //
-        for (let i = 0; i < channelList.data?.data.length; i++) {
+        for (let i = 0; i < channelList.data.data.length; i++) {
           let recentChannelMsgsRequest = {
             "access-token": currentHeaders["access-token"],
             client: currentHeaders.client,

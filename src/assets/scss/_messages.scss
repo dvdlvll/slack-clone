@@ -28,19 +28,14 @@
   display: none;
 }
 
-.photo-message-container {
-  @include flex-properties(row-reverse);
-  width: 100%;
-}
-
 .incoming-messages {
   @include flex-properties(column);
   margin-bottom: 10px;
   word-break: break-word;
   animation: bubble 0.1s ease forwards;
 
-  .pic-message-container {
-    display: flex;
+  .photo-message-container {
+    @include flex-properties(row);
     width: 100%;
   }
 }
@@ -53,7 +48,9 @@
   animation: bubble 0.3s ease forwards;
 
   .photo-message-container {
+    display: flex;
     flex-direction: row-reverse;
+    width: 100%;
   }
 }
 
@@ -70,7 +67,7 @@
 
 .message-bubble-sender {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)) top/100% 800%;
-  background-color: $red1;
+  background-color: $violet1;
   padding: 15px;
   border-radius: 20px 20px 20px 3px;
   color: white;
@@ -84,7 +81,7 @@
 .message-time-sender {
   color: $black1;
   font-size: small;
-  margin-left: 55px;
+  margin-left: 35px;
   animation: messageInfo 0.3s ease forwards;
 }
 
@@ -92,7 +89,7 @@
 .message-time-user {
   color: $black1;
   font-size: small;
-  margin-right: 55px;
+  margin-right: 35px;
   animation: messageInfo 0.3s ease forwards;
 }
 
@@ -108,7 +105,7 @@
 }
 
 .message-bubble-user {
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.3)) top/100% 800%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.2)) top/100% 800%;
   background-color: $cream1;
   padding: 15px;
   border-radius: 20px 20px 3px 20px;
