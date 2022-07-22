@@ -871,7 +871,7 @@ NavLink button {
   width: 100%;
   font-size: 1em;
   border-radius: 10px;
-  border: 2px solid #b5e3d4;
+  border: 2px solid #e5cec2;
   outline: none;
   padding: 20px;
   -webkit-transition: 0.2s ease;
@@ -937,7 +937,7 @@ NavLink button {
   font-weight: 700;
   outline: none;
   border-radius: 10px;
-  border: 2px solid #b5e3d4;
+  border: 2px solid #e5cec2;
   padding: 20px 20px 20px 20px;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
@@ -1422,7 +1422,7 @@ NavLink button {
   font-weight: 700;
   outline: none;
   border-radius: 10px;
-  border: 2px solid #b5e3d4;
+  border: 2px solid #e5cec2;
   padding: 20px 20px 20px 20px;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
@@ -1620,6 +1620,10 @@ NavLink button {
   cursor: pointer;
 }
 
+.invite-user-toggle span {
+  margin-left: 10px;
+}
+
 .invite-user-toggle:hover {
   background-color: #faeee8;
   color: #3f3b3a;
@@ -1646,6 +1650,10 @@ NavLink button {
   background-color: white;
   border-radius: 10px;
   padding: 15px;
+}
+
+.member-list::-webkit-scrollbar {
+  display: none;
 }
 
 .member-list span:last-child {

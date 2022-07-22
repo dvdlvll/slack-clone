@@ -179,7 +179,7 @@
   @include font-properties(black, $inter, 1.1em, 700);
   outline: none;
   border-radius: 10px;
-  border: 2px solid $green1;
+  border: 2px solid $cream2;
 
   padding: 20px 20px 20px 20px;
 
@@ -314,6 +314,10 @@
   font-weight: 700;
   transition: 0.1s ease;
   cursor: pointer;
+
+  span {
+    margin-left: 10px;
+  }
 }
 
 .invite-user-toggle:hover {
@@ -340,6 +344,10 @@
   background-color: white;
   border-radius: 10px;
   padding: 15px;
+}
+
+.member-list::-webkit-scrollbar {
+  display: none;
 }
 
 .member-list span:last-child {

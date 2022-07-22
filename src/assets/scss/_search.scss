@@ -6,7 +6,7 @@
   @include dimension-properties(2em, 100%);
   font-size: 1em;
   border-radius: 10px;
-  border: 2px solid $green1;
+  border: 2px solid $cream2;
   outline: none;
   padding: 20px;
   transition: 0.2s ease;
@@ -54,7 +54,7 @@
   @include font-properties(black, $inter, 1.1em, 700);
   outline: none;
   border-radius: 10px;
-  border: 2px solid $green1;
+  border: 2px solid $cream2;
 
   padding: 20px 20px 20px 20px;
 
