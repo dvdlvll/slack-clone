@@ -80,6 +80,7 @@ function Input({ type, id, newMsg, setNewMessageUser }) {
           id="message-input"
           autoComplete="off"
           placeholder="Type your message here..."
+          max="255"
           ref={messageInputRef}
         />
       </label>
