@@ -618,7 +618,7 @@ NavLink button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 90%;
+  margin-top: 50px;
   text-align: center;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -627,13 +627,21 @@ NavLink button {
 }
 
 .channel-container-empty .empty-title {
-  color: #3f3b3a;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2em;
-  font-weight: 700;
+  color: #8667ce;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5em;
+  font-weight: 900;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 5px;
+}
+
+.channel-container-empty img {
+  height: 50%;
+  width: 50%;
+  display: block;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .channel-item {
@@ -1384,6 +1392,21 @@ NavLink button {
       -ms-user-select: none;
           user-select: none;
   overflow: hidden;
+}
+
+.message-container-empty img {
+  height: 30vh;
+  width: 100%;
+}
+
+.message-container-empty .empty-title {
+  color: #8667ce;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .message-input-container {

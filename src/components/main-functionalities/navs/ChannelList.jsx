@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 // components //
 import Photo from "../../Photo";
+import NoContacts from "../../../assets/images/undraw_following_re_d5aa.svg";
 
 function ChannelList() {
   // context //
@@ -13,8 +14,9 @@ function ChannelList() {
 
   if (channelList.data.errors) {
     return (
-      <div className="contact-container-empty">
-        <span className="empty-title">How desolate.</span>
+      <div className="channel-container-empty">
+        <img src={NoContacts} alt="No contacts" />
+        <span className="empty-title">Hmm... this is empty.</span>
         <p>Create a new channel and hang out with your friends!</p>
       </div>
     );

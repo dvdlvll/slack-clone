@@ -9,6 +9,7 @@ import Bubble from "./Bubble";
 import Header from "./Header";
 import Input from "./Input";
 import Scroll from "./Scroll";
+import NoMessage from "../../../assets/images/undraw_respond_re_iph2.svg";
 
 // axios //
 import { getCall } from "../../../utils/api-calls";
@@ -144,6 +145,7 @@ function Messages() {
                   </div>
                 ) : (
                   <div className="message-container-empty">
+                    <img src={NoMessage} alt="No messages" />
                     <span className="empty-title">
                       No one's made a move yet.
                     </span>

@@ -157,6 +157,16 @@
   text-align: center;
   user-select: none;
   overflow: hidden;
+
+  img {
+    @include dimension-properties(30vh, 100%);
+  }
+
+  .empty-title {
+    @include font-properties($violet1, $inter, 1.5em, 900, center);
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
 }
 
 .message-input-container {

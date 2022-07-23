@@ -8,6 +8,7 @@ import { getCall } from "../utils/api-calls";
 import { CHANNELS_ENDPOINT, USERS_ENDPOINT } from "../utils/api-urls";
 
 // components //
+import Welcome from "../assets/images/undraw_welcoming_re_x0qo.svg";
 import Loading from "../components/Loading";
 import Navbar from "../components/main-functionalities/navs/Navbar";
 import Sidebar from "../components/main-functionalities/navs/Sidebar";
@@ -29,7 +30,6 @@ function MainPage() {
     setShowNewChannelModal,
     loadData,
     showMobile,
-    showChatInfo,
     removeEmail,
   } = useContext(UserContext);
 
@@ -121,6 +121,7 @@ function MainPage() {
                 }
               >
                 <div className="message-container-empty">
+                  <img src={Welcome} alt="Welcome back" />
                   <span className="empty-title">
                     Welcome back, {removeEmail(currentUser.email)}!
                   </span>

@@ -7,14 +7,20 @@
 
 .channel-container-empty {
   @include flex-properties(column, center, center);
-  height: 90%;
+  margin-top: 50px;
   text-align: center;
   user-select: none;
 
   .empty-title {
-    @include font-properties($black1, $roboto, 1.2em, 700, center);
+    @include font-properties($violet1, $inter, 1.5em, 900, center);
     margin-top: 10px;
     margin-bottom: 5px;
+  }
+
+  img {
+    @include dimension-properties(50%, 50%);
+    display: block;
+    justify-self: center;
   }
 }
 
